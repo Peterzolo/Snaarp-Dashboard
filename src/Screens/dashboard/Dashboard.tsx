@@ -1,7 +1,13 @@
 import React from 'react';
+import { DashboardLayout } from '../../Layouts';
+import styled from 'styled-components';
 
-const Dashboard = () => {
-  return <div>Dashboard Page</div>;
+export const Dashboard = () => {
+  return (
+    <DashboardLayout>
+      <MainWrapper>Main Dashboard Content</MainWrapper>
+    </DashboardLayout>
+  );
 };
 
-export default Dashboard;
+const MainWrapper = styled.div``;

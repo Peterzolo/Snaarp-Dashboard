@@ -1,7 +1,38 @@
 import React from 'react';
+import styled from 'styled-components';
+import { FaBars } from 'react-icons/fa';
 
-const TopBarLayout = () => {
-  return <div>TopBar</div>;
+export const TopBarLayout = ({
+  toggleSidebar,
+}: {
+  toggleSidebar: () => void;
+}) => {
+  return (
+    <TopBarWrapper>
+      <h2>Dashboard</h2>
+      <HamburgerIcon onClick={toggleSidebar}>
+        <FaBars />
+      </HamburgerIcon>
+    </TopBarWrapper>
+  );
 };
 
-export default TopBarLayout;
+const TopBarWrapper = styled.div`
+  width: 100%;
+  background: #ecf0f1;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const HamburgerIcon = styled.div`
+  cursor: pointer;
+  display: none; /* Hide it on desktop */
+  @media (max-width: 768px) {
+    display: block; /* Show it on mobile */
+  }
+`;

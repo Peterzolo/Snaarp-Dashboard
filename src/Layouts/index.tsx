@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
+import { SidebarLayout } from './DashboardLayout/DashboardLayoutComponents/Sidebar';
+import { TopBarLayout } from './DashboardLayout/DashboardLayoutComponents/Topbar';
 
-const DashboardLayout = () => {
-  return <MainWrapper></MainWrapper>;
+interface DashboardLayoutProps {
+  children: ReactNode;
+}
+
+export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
+  children,
+}) => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsMobileMenuOpen((prevState) => !prevState);
+  };
+
+  return (
+    <MainWrapper>
+      <SidebarLayout isMobileMenuOpen={isMobileMenuOpen} />
+      <ContentWrapper>
+        <TopBarLayout toggleSidebar={toggleSidebar} />
+        <MainContentWrapper>{children}</MainContentWrapper>
+      </ContentWrapper>
+    </MainWrapper>
+  );
 };
 
-const MainWrapper = styled.div``;
+const MainWrapper = styled.div`
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  gap: 10px;
+`;
 
-export default DashboardLayout;
+const ContentWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+`;
+
+const MainContentWrapper = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f7f9fb;
+`;

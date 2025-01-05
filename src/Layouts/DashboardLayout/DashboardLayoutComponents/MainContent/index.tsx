@@ -1,7 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
 
-const MainContentLayout = () => {
-  return <div>Main content layout</div>;
+export const MainContentLayout = () => {
+  return (
+    <ContentWrapper>
+      <p>
+        Main content goes here. Add your dashboard information or any other
+        details here.
+      </p>
+      <p>More content to test scrollable behavior...</p>
+    </ContentWrapper>
+  );
 };
 
-export default MainContentLayout;
+const ContentWrapper = styled.div`
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f7f9fb;
+`;

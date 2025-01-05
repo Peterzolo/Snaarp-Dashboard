@@ -1,6 +1,6 @@
-import './App.css';
+// import './App.css';
 import styled from 'styled-components';
-import Dashboard from './Screens/dashboard/Dashboard';
+import { Dashboard } from './Screens/dashboard/Dashboard';
 
 function App() {
   return (
@@ -10,6 +10,12 @@ function App() {
   );
 }
 
-const MainWrapper = styled.div``;
+const MainWrapper = styled.div`
+  padding: 10px;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+`;
 
 export default App;
