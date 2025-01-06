@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
+import { TopComponentOne } from './components/TopComponentOne';
+import { TopComponentTwo } from './components/TopComponentTwo';
+import { TopComponentThree } from './components/TopComponentThree';
 
 export const TopBarLayout = ({
   toggleSidebar,
@@ -9,7 +12,11 @@ export const TopBarLayout = ({
 }) => {
   return (
     <TopBarWrapper>
-      <h2>Dashboard</h2>
+      <TopContentWrapper>
+        <TopComponentOne />
+        <TopComponentTwo />
+        <TopComponentThree />
+      </TopContentWrapper>
       <HamburgerIcon onClick={toggleSidebar}>
         <FaBars />
       </HamburgerIcon>
@@ -28,6 +35,14 @@ const TopBarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
+  height: 60px;
+`;
+
+const TopContentWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const HamburgerIcon = styled.div`

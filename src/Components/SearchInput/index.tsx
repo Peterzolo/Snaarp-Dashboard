@@ -27,7 +27,7 @@ const SearchInput: React.FC<ISearchInputProps> = ({
   borderColor = '#ccc',
   backgroundColor = '#f9f9f9',
   iconColor = '#555',
-  inputPadding = '10px 40px 10px 15px',
+  inputPadding = '10px 15px 10px 40px',
   fontSize = '16px',
   width = '100%',
   height = '40px',
@@ -86,13 +86,13 @@ const MainWrapper = styled.div<{
 
 const StyledSearchIcon = styled(FaSearch)<{ iconColor: string }>`
   color: ${({ iconColor }) => iconColor};
-  cursor: pointer;
   position: absolute;
-  right: 10px;
+  left: 10px;
   font-size: 18px;
+  cursor: pointer;
 
   @media (max-width: 480px) {
-    right: 15px;
+    left: 15px;
   }
 `;
 
