@@ -39,6 +39,7 @@ const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
 `;
 
 const RadioButtonWrapper = styled.div`
