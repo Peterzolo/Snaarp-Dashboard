@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaTabletAlt } from 'react-icons/fa'; // FontAwesome tablet/device icon
+import { FaTabletAlt } from 'react-icons/fa';
 
 export const SubHeader = () => {
   return (
@@ -25,7 +25,7 @@ const MainWrapper = styled.div`
   background: white;
   border-radius: 10px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
