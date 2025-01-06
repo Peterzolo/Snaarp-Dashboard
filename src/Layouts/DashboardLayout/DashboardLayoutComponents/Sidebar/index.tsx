@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { SidebarItems } from './components/SideBarItems';
 
 export const SidebarLayout = ({
   isMobileMenuOpen,
@@ -9,9 +10,7 @@ export const SidebarLayout = ({
   return (
     <SidebarWrapper isMobileMenuOpen={isMobileMenuOpen}>
       <Logo>Snaarp</Logo>
-      <Menu>
-        <MenuItem>Dashboard</MenuItem>
-      </Menu>
+      <SidebarItems />
     </SidebarWrapper>
   );
 };
@@ -46,18 +45,9 @@ const SidebarWrapper = styled.div<{ isMobileMenuOpen: boolean }>`
 
 const Logo = styled.h1`
   margin-bottom: 20px;
-  font-size: 24px;
-`;
-
-const Menu = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-`;
-
-const MenuItem = styled.div`
-  cursor: pointer;
-  &:hover {
-    text-decoration: underline;
-  }
+  font-size: 30px;
+  font-weight: bold;
+  color: #262626;
+  text-align: center;
+  margin-left: 50px;
 `;
