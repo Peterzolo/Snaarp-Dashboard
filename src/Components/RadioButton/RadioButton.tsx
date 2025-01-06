@@ -23,7 +23,7 @@ const RadioInput: React.FC<IRadioInputProps> = ({
   borderColor = '#ccc',
   labelColor = '#333',
   backgroundColor = '#fff',
-  iconColor = '#555',
+  iconColor = '#f1f1f1',
   size = '20px',
 }) => {
   return (
