@@ -8,7 +8,8 @@ export const theme = {
     info: '#17a2b8',
     light: '#f8f9fa',
     dark: '#343a40',
-    background: '#ffffff',
+    mainBgColor: '#780650',
+    extraBgColor: '#ffffff',
     text: '#212529',
   },
 };

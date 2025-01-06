@@ -1,12 +1,15 @@
-// import './App.css';
-import styled from 'styled-components';
-import { Dashboard } from './Screens/dashboard/Dashboard';
+import styled, { ThemeProvider } from 'styled-components';
+import { Dashboard } from './Screens/dashboard';
+import { theme } from './utils/theme';
 
 function App() {
+  console.log('Theme:', theme);
   return (
-    <MainWrapper>
-      <Dashboard />
-    </MainWrapper>
+    <ThemeProvider theme={theme}>
+      <MainWrapper>
+        <Dashboard />
+      </MainWrapper>
+    </ThemeProvider>
   );
 }
 
@@ -16,6 +19,8 @@ const MainWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
+  /* background-color: ${({ theme }) => theme.mainBgColor}; */
+  background-color: #f0f0f0;
 `;
 
 export default App;

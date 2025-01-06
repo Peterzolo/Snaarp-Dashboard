@@ -20,8 +20,8 @@ const SidebarWrapper = styled.div<{ isMobileMenuOpen: boolean }>`
   border-radius: 10px;
   width: 250px;
   height: 100vh;
-  background: #2c3e50;
-  color: white;
+  background-color: #ffffff;
+  color: #a49c9c;
   padding: 20px;
   display: flex;
   flex-direction: column;

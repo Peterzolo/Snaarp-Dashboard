@@ -2,6 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import styled from 'styled-components';
 import { SidebarLayout } from './DashboardLayout/DashboardLayoutComponents/Sidebar';
 import { TopBarLayout } from './DashboardLayout/DashboardLayoutComponents/Topbar';
+import { SubHeader } from './DashboardLayout/DashboardLayoutComponents/SubHeader/SubHeader';
 
 interface DashboardLayoutProps {
   children: ReactNode;
@@ -21,6 +22,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <SidebarLayout isMobileMenuOpen={isMobileMenuOpen} />
       <ContentWrapper>
         <TopBarLayout toggleSidebar={toggleSidebar} />
+        <SubHeader />
         <MainContentWrapper>{children}</MainContentWrapper>
       </ContentWrapper>
     </MainWrapper>
@@ -45,5 +47,4 @@ const MainContentWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 20px;
-  background: #f7f9fb;
 `;

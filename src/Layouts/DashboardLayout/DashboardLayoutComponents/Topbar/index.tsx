@@ -19,7 +19,7 @@ export const TopBarLayout = ({
 
 const TopBarWrapper = styled.div`
   width: 100%;
-  background: #ecf0f1;
+  background: #ffffff;
   padding: 10px 20px;
   position: sticky;
   top: 0;
@@ -27,6 +27,7 @@ const TopBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 10px;
 `;
 
 const HamburgerIcon = styled.div`
