@@ -47,12 +47,16 @@ const Overlay = styled.div`
 `;
 
 const ModalContent = styled.div`
-  background-color: white;
+  background-color: #757272;
   padding: 20px;
   border-radius: 10px;
   position: relative;
   max-width: 500px;
   width: 100%;
+  box-shadow: #757272;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const CloseButton = styled.button`
