@@ -10,6 +10,10 @@ interface ISelectInputProps {
   options: string[];
   placeholder?: string; // Optional placeholder prop
   helperText?: string;
+  padding?: string; // Customizable padding
+  marginTop?: string; // Customizable margin-top
+  width?: string; // Customizable width
+  height?: string; // Customizable height
 }
 
 export const SelectInput: React.FC<ISelectInputProps> = ({
@@ -19,9 +23,18 @@ export const SelectInput: React.FC<ISelectInputProps> = ({
   options,
   placeholder,
   helperText,
+  padding,
+  marginTop,
+  width,
+  height,
 }) => {
   return (
-    <MainWrapper>
+    <MainWrapper
+      padding={padding}
+      marginTop={marginTop}
+      width={width}
+      height={height}
+    >
       <Form.Group controlId="selectInput">
         <Form.Label>{label}</Form.Label>
         <div className="d-flex align-items-center">
@@ -53,10 +66,18 @@ export const SelectInput: React.FC<ISelectInputProps> = ({
   );
 };
 
-const MainWrapper = styled.div`
+const MainWrapper = styled.div<{
+  padding?: string;
+  marginTop?: string;
+  width?: string;
+  height?: string;
+}>`
   max-width: 400px;
   margin: 0 auto;
-  padding: 16px;
+  padding: ${({ padding }) => padding || '16px'};
+  margin-top: ${({ marginTop }) => marginTop || '0'};
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || 'auto'};
 
   .form-select {
     position: relative;

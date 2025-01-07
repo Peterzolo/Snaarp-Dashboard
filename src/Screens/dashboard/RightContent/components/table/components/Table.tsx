@@ -12,16 +12,17 @@ import {
   FaCircle,
 } from 'react-icons/fa';
 import ToggleSwitch from '../../../../../../Components/Toggle/ToogleSwitch';
+import SelectInput from '../../../../../../Components/SelectInput/CustomSelect';
 
 const fields = [
-  { key: 'usb', icon: <FaUsb /> },
-  { key: 'sd', icon: <FaSdCard /> },
-  { key: 'cd', icon: <FaCompactDisc /> },
-  { key: 'lockDevice', icon: <FaLock /> },
-  { key: 'bluetooth', icon: <FaBluetooth /> },
-  { key: 'printers', icon: <FaPrint /> },
-  { key: 'shutdownDevice', icon: <FaPowerOff /> },
-  { key: 'rebootDevice', icon: <FaRedo /> },
+  { key: 'usb', icon: <FaUsb />, label: 'USB' },
+  { key: 'sd', icon: <FaSdCard />, label: 'SD Card' },
+  { key: 'cd', icon: <FaCompactDisc />, label: 'CD' },
+  { key: 'lockDevice', icon: <FaLock />, label: 'Lock Device' },
+  { key: 'bluetooth', icon: <FaBluetooth />, label: 'Bluetooth' },
+  { key: 'printers', icon: <FaPrint />, label: 'Printers' },
+  { key: 'shutdownDevice', icon: <FaPowerOff />, label: 'Shutdown' },
+  { key: 'rebootDevice', icon: <FaRedo />, label: 'Reboot' },
 ];
 
 const TableContainer = styled.div`
@@ -61,24 +62,23 @@ const CustomTable = styled.table`
   }
 `;
 
-const IconContainer = styled.span`
+const IconContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 8px;
+
+  span {
+    font-size: 12px;
+    text-align: center;
+    color: #333;
+  }
 `;
 
 const StatusIcon = styled(FaCircle)<{ isActive: boolean }>`
   color: ${(props) => (props.isActive ? 'green' : 'gray')};
   cursor: pointer;
-`;
-
-const SelectInput = styled.select`
-  width: 100%;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
 `;
 
 export const Table = ({
@@ -97,15 +97,17 @@ export const Table = ({
             <th>Name</th>
             {fields.map((field) => (
               <th key={field.key}>
-                <IconContainer>{field.icon}</IconContainer>
+                <IconContainer>
+                  {field.icon}
+                  <span>{field.label}</span>
+                </IconContainer>
               </th>
             ))}
           </tr>
           <tr>
             <td></td>
-            <td>
-              <SelectInput />
-            </td>
+            <SelectInput options={[]} width="200px" />
+
             {fields.map((field) => (
               <td key={field.key}>
                 <ToggleSwitch />
