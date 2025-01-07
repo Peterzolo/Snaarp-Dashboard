@@ -4,9 +4,10 @@ import { Table } from './table/components/Table';
 const data = [
   {
     status: 'Active',
-    name: 'Device 1',
-    usb: true, // Replaced 'Yes' with true
-    sd: false, // Replaced 'No' with false
+    picture: '/images/avatar1.png',
+    name: 'Floyd Miles',
+    usb: true,
+    sd: false,
     cd: true,
     lockDevice: false,
     bluetooth: true,
@@ -16,7 +17,8 @@ const data = [
   },
   {
     status: 'Inactive',
-    name: 'Device 2',
+    picture: '/images/avatar1.png',
+    name: 'Donald Richards',
     usb: false,
     sd: true,
     cd: false,
@@ -44,3 +46,4 @@ export const TableWrapperComponent = () => {
     </div>
   );
 };
+//

@@ -51,8 +51,8 @@ const CustomTable = styled.table`
 
   th:nth-child(2),
   td:nth-child(2) {
-    width: 350px; /* Set a fixed width for the Name column */
-    word-wrap: break-word; /* Ensure long text in the Name column wraps */
+    width: 350px;
+    word-wrap: break-word;
   }
 `;
 
@@ -166,9 +166,18 @@ export const Table = ({
           {data.map((row, rowIndex) => (
             <tr key={rowIndex}>
               <td>
-                <StatusIcon isActive={row.status === 'Active'} />
+                <StatusIcon
+                  isActive={row.status === 'Active'}
+                  style={{ fontSize: '10px' }}
+                />
               </td>
-              <td>{row.name}</td>
+              <td>
+                <TableColWrapper>
+                  <Avatar src={row.picture} />
+
+                  <Name> {row.name}</Name>
+                </TableColWrapper>
+              </td>
               <td>
                 <ToggleSwitch
                   isOn={row.usb === 'Yes'}
@@ -234,3 +243,18 @@ export const Table = ({
     </TableContainer>
   );
 };
+
+const TableColWrapper = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+const Avatar = styled.img`
+  width: 20px;
+  background-color: #444242;
+  border-radius: 8px;
+`;
+const Name = styled.div`
+  color: #2f54eb;
+  font-weight: 500;
+  font-size: 14px;
+`;

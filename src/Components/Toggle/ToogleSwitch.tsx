@@ -20,7 +20,7 @@ const Slider = styled.span<{ isOn: boolean }>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${(props) => (props.isOn ? '#4caf50' : '#ccc')};
+  background-color: ${(props) => (props.isOn ? '#2f54eb' : '#ccc')};
   transition: 0.4s;
   border-radius: 25px;
 
