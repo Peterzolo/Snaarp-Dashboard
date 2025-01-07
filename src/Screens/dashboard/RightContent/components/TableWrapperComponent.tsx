@@ -5,33 +5,42 @@ const data = [
   {
     status: 'Active',
     name: 'Device 1',
-    usb: 'Yes',
-    sd: 'No',
-    cd: 'Yes',
-    lockDevice: 'No',
-    bluetooth: 'Yes',
-    printers: 'No',
-    shutdownDevice: 'No',
-    rebootDevice: 'Yes',
+    usb: true, // Replaced 'Yes' with true
+    sd: false, // Replaced 'No' with false
+    cd: true,
+    lockDevice: false,
+    bluetooth: true,
+    printers: false,
+    shutdownDevice: false,
+    rebootDevice: true,
   },
   {
     status: 'Inactive',
     name: 'Device 2',
-    usb: 'No',
-    sd: 'Yes',
-    cd: 'No',
-    lockDevice: 'Yes',
-    bluetooth: 'No',
-    printers: 'Yes',
-    shutdownDevice: 'Yes',
-    rebootDevice: 'No',
+    usb: false,
+    sd: true,
+    cd: false,
+    lockDevice: true,
+    bluetooth: false,
+    printers: true,
+    shutdownDevice: true,
+    rebootDevice: false,
   },
 ];
 
 export const TableWrapperComponent = () => {
   return (
     <div>
-      <Table data={data} />
+      <Table
+        data={data}
+        onToggleChange={function (
+          rowIndex: number,
+          field: string,
+          value: boolean,
+        ): void {
+          throw new Error('Function not implemented.');
+        }}
+      />
     </div>
   );
 };
