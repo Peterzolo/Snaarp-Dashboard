@@ -15,7 +15,6 @@ export const RightContent = () => {
 };
 
 const MainWrapper = styled.div`
-  width: 860px;
   display: flex;
   flex-direction: column;
   gap: 8px;

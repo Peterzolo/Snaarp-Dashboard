@@ -17,7 +17,7 @@ export const LeftContent = () => {
 const MainWrapper = styled.div`
   background-color: white;
   padding: 10px;
-  width: 385px;
+  /* width: 385px; */
   border-radius: 10px;
   margin-left: -20px;
   margin-right: 5px;
