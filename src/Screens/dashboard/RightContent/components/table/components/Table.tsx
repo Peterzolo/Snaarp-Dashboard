@@ -13,6 +13,17 @@ import {
 } from 'react-icons/fa';
 import ToggleSwitch from '../../../../../../Components/Toggle/ToogleSwitch';
 
+const fields = [
+  { key: 'usb', icon: <FaUsb /> },
+  { key: 'sd', icon: <FaSdCard /> },
+  { key: 'cd', icon: <FaCompactDisc /> },
+  { key: 'lockDevice', icon: <FaLock /> },
+  { key: 'bluetooth', icon: <FaBluetooth /> },
+  { key: 'printers', icon: <FaPrint /> },
+  { key: 'shutdownDevice', icon: <FaPowerOff /> },
+  { key: 'rebootDevice', icon: <FaRedo /> },
+];
+
 const TableContainer = styled.div`
   overflow-x: auto;
   margin: 20px 0;
@@ -47,12 +58,6 @@ const CustomTable = styled.table`
 
   tr:hover {
     background-color: #f1f1f1;
-  }
-
-  th:nth-child(2),
-  td:nth-child(2) {
-    width: 350px;
-    word-wrap: break-word;
   }
 `;
 
@@ -90,76 +95,22 @@ export const Table = ({
           <tr>
             <th>Status</th>
             <th>Name</th>
-            <th>
-              <IconContainer>
-                <FaUsb /> USB
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaSdCard /> SD
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaCompactDisc /> CD/DVDs
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaLock /> Lock Device
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaBluetooth /> Bluetooth
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaPrint /> Printers
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaPowerOff /> Shutdown Device
-              </IconContainer>
-            </th>
-            <th>
-              <IconContainer>
-                <FaRedo /> Reboot Device
-              </IconContainer>
-            </th>
+            {fields.map((field) => (
+              <th key={field.key}>
+                <IconContainer>{field.icon}</IconContainer>
+              </th>
+            ))}
           </tr>
           <tr>
             <td></td>
             <td>
               <SelectInput />
             </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
-            <td>
-              <ToggleSwitch />
-            </td>
+            {fields.map((field) => (
+              <td key={field.key}>
+                <ToggleSwitch />
+              </td>
+            ))}
           </tr>
         </thead>
         <tbody>
@@ -174,68 +125,19 @@ export const Table = ({
               <td>
                 <TableColWrapper>
                   <Avatar src={row.picture} />
-
-                  <Name> {row.name}</Name>
+                  <Name>{row.name}</Name>
                 </TableColWrapper>
               </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.usb === 'Yes'}
-                  onToggle={(value) => onToggleChange(rowIndex, 'usb', value)}
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.sd === 'Yes'}
-                  onToggle={(value) => onToggleChange(rowIndex, 'sd', value)}
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.cd === 'Yes'}
-                  onToggle={(value) => onToggleChange(rowIndex, 'cd', value)}
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.lockDevice === 'Yes'}
-                  onToggle={(value) =>
-                    onToggleChange(rowIndex, 'lockDevice', value)
-                  }
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.bluetooth === 'Yes'}
-                  onToggle={(value) =>
-                    onToggleChange(rowIndex, 'bluetooth', value)
-                  }
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.printers === 'Yes'}
-                  onToggle={(value) =>
-                    onToggleChange(rowIndex, 'printers', value)
-                  }
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.shutdownDevice === 'Yes'}
-                  onToggle={(value) =>
-                    onToggleChange(rowIndex, 'shutdownDevice', value)
-                  }
-                />
-              </td>
-              <td>
-                <ToggleSwitch
-                  isOn={row.rebootDevice === 'Yes'}
-                  onToggle={(value) =>
-                    onToggleChange(rowIndex, 'rebootDevice', value)
-                  }
-                />
-              </td>
+              {fields.map((field) => (
+                <td key={field.key}>
+                  <ToggleSwitch
+                    isOn={row[field.key] === true}
+                    onToggle={(value) =>
+                      onToggleChange(rowIndex, field.key, value)
+                    }
+                  />
+                </td>
+              ))}
             </tr>
           ))}
         </tbody>
@@ -248,11 +150,13 @@ const TableColWrapper = styled.div`
   display: flex;
   gap: 15px;
 `;
+
 const Avatar = styled.img`
   width: 20px;
   background-color: #444242;
   border-radius: 8px;
 `;
+
 const Name = styled.div`
   color: #2f54eb;
   font-weight: 500;

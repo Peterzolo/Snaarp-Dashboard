@@ -70,8 +70,8 @@ const StyledRadioButton = styled.input<{
     position: absolute;
     top: 4px;
     left: 4px;
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 40%;
     background-color: ${({ iconColor }) => iconColor};
     border-radius: 50%;
     opacity: ${({ checked }) => (checked ? 1 : 0)};

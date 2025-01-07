@@ -15,7 +15,7 @@ export const LeftSubContentTwo = () => {
           borderColor="#3498db"
           labelColor="#2c3e50"
           iconColor="#3498db"
-          size="24px"
+          size="16px"
         />
       </RadioButtonWrapper>
       <RadioButtonWrapper>
@@ -28,7 +28,7 @@ export const LeftSubContentTwo = () => {
           borderColor="#3498db"
           labelColor="#2c3e50"
           iconColor="#3498db"
-          size="24px"
+          size="16px"
         />
       </RadioButtonWrapper>
     </MainWrapper>
