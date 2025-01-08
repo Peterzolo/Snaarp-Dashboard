@@ -154,7 +154,7 @@ const TableColWrapper = styled.div`
 
 const Avatar = styled.img`
   width: 20px;
-  background-color: #444242;
+  background-color: #e20c0c;
   border-radius: 8px;
 `;
 
