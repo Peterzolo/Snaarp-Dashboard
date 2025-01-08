@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const TopComponentOne = () => {
-  return <MainWrapper>Top Component One</MainWrapper>;
+  return <MainWrapper></MainWrapper>;
 };
 
 const MainWrapper = styled.div``;

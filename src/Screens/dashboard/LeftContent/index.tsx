@@ -20,4 +20,9 @@ const MainWrapper = styled.div`
   border-radius: 10px;
   margin-left: -20px;
   margin-right: 5px;
+  @media (max-width: 768px) {
+    margin-left: 0; // Remove left margin on mobile
+    margin-right: 0; // Remove right margin on mobile
+    padding: 15px; // Increase padding for better spacing on mobile
+  }
 `;

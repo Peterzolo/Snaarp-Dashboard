@@ -22,7 +22,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <SidebarLayout isMobileMenuOpen={isMobileMenuOpen} />
       <ContentWrapper>
         <TopBarLayout toggleSidebar={toggleSidebar} />
-        <SubHeader />
+        {/* <SubHeader /> */}
         <MainContentWrapper>{children}</MainContentWrapper>
       </ContentWrapper>
     </MainWrapper>
@@ -32,7 +32,7 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 const MainWrapper = styled.div`
   display: flex;
   height: 100vh;
-  width: 100%;
+  /* width: 100%; */
   gap: 10px;
 `;
 

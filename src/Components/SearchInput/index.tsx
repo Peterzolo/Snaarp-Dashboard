@@ -74,13 +74,12 @@ const MainWrapper = styled.div<{
   position: relative;
   transition: all 0.3s ease;
 
-  @media (max-width: 768px) {
-    width: ${({ responsiveWidth }) => responsiveWidth};
-  }
-
   @media (max-width: 480px) {
+    width: auto;
     height: auto;
-    padding: 10px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
   }
 `;
 
@@ -92,7 +91,8 @@ const StyledSearchIcon = styled(FaSearch)<{ iconColor: string }>`
   cursor: pointer;
 
   @media (max-width: 480px) {
-    left: 15px;
+    left: 0;
+    position: relative;
   }
 `;
 
@@ -105,8 +105,7 @@ const StyledInput = styled.input<{ padding: string; fontSize: string }>`
   background: transparent;
 
   @media (max-width: 480px) {
-    font-size: 14px;
-    padding: 10px;
+    display: none; /* Hides the input field */
   }
 `;
 

@@ -24,20 +24,34 @@ const MainWrapper = styled.div`
   height: 60px;
   background: white;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: -13px;
   margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+  margin-left: -20px;
+  @media (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    gap: 10px;
+    margin-left: 0;
+  }
 `;
 
 const IconWrapper = styled.div`
   margin-left: 20px;
   background-color: #f5f5f5;
-  padding: 5px;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 const Text = styled.h3`
   font-weight: 600;
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 16px;
+  }
 `;

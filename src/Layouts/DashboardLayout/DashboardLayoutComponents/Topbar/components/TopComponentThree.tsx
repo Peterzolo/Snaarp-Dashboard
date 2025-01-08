@@ -20,23 +20,23 @@ export const TopComponentThree = () => {
         <AgentCodeWrapper>
           <Text>Agent code:</Text>
           <Code>0365o2j37742y3b38</Code>
+          <IconWrapper>
+            <FaRegCopy
+              style={{
+                color: '#8c8c8c',
+                background: 'none',
+                padding: 0,
+              }}
+            />
+          </IconWrapper>
         </AgentCodeWrapper>
-        <IconWrapper>
-          <FaRegCopy
-            style={{
-              color: '#8c8c8c',
-              background: 'none',
-              padding: 0,
-            }}
-          />
-        </IconWrapper>
       </ContentWrapper>
     </MainWrapper>
   );
 };
 
 const MainWrapper = styled.div`
-  width: 400px;
+  /* width: 400px; */
   padding: 10px;
 `;
 
@@ -54,15 +54,19 @@ const AgentCodeWrapper = styled.div`
   height: 40px;
   border-radius: 5px;
   padding: 10 10 0 10;
-  width: 250px;
 `;
 const Text = styled.p`
-  margin-top: 8px;
+  margin-top: 14px;
   font-weight: 500;
+  font-size: 14px;
+  padding-left: 10px;
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 const Code = styled.p`
   color: blue;
-  margin-top: 8px;
+  margin-top: 14px;
 `;
 
 const IconWrapper = styled.div`

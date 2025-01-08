@@ -36,6 +36,10 @@ const TopBarWrapper = styled.div`
   align-items: center;
   border-radius: 10px;
   height: 60px;
+  @media (max-width: 768px) {
+    padding: 10px 15px;
+    height: auto;
+  }
 `;
 
 const TopContentWrapper = styled.div`
