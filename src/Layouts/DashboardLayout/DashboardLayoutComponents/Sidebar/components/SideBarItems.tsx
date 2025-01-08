@@ -1,32 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaUserAlt, FaCog } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const sidebarItems = [
   { title: 'Dashboard', icon: <FaHome />, link: '/' },
-  { title: 'Organization & Reg.', icon: <FaUserAlt />, link: '#' },
-  { title: 'Settings', icon: <FaCog />, link: '#' },
-  { title: 'Reporting.', icon: <FaUserAlt />, link: '#' },
-  { title: 'Billing', icon: <FaUserAlt />, link: '#' },
-  { title: 'Account', icon: <FaUserAlt />, link: '#' },
-  { title: 'Device Health', icon: <FaUserAlt />, link: '#' },
-  { title: 'End Point Mgt Security', icon: <FaUserAlt />, link: '#' },
+  { title: 'Endpoint Mgt Sec.', icon: <FaUserAlt />, link: '/endpoint-mgt' },
   {
     title: 'Device Management',
     icon: <FaUserAlt />,
     link: '/device-management',
   },
-  { title: 'Website Block', icon: <FaUserAlt />, link: '#' },
-  { title: 'Settings', icon: <FaUserAlt />, link: '#' },
+  { title: 'Organization & Reg.', icon: <FaUserAlt />, link: '/organization' },
+  { title: 'Reporting.', icon: <FaUserAlt />, link: '/reporting' },
+  { title: 'Settings', icon: <FaCog />, link: '/setting' },
+  { title: 'Billing.', icon: <FaUserAlt />, link: '/billing' },
+  { title: 'Account.', icon: <FaUserAlt />, link: '/account' },
+  { title: 'Device Health.', icon: <FaUserAlt />, link: '/device-health' },
 ];
 
 export const SidebarItems = () => {
+  const location = useLocation();
+
   return (
     <SidebarItemsList>
       {sidebarItems.map((item, index) => (
         <SidebarItem key={index}>
-          <SidebarLink to={item.link}>
+          <SidebarLink
+            to={item.link}
+            $isActive={location.pathname === item.link}
+          >
             <SidebarIcon>{item.icon}</SidebarIcon>
             <SidebarTitle>{item.title}</SidebarTitle>
           </SidebarLink>
@@ -49,15 +52,17 @@ const SidebarItem = styled.li`
   margin-bottom: 20px;
 `;
 
-const SidebarLink = styled(Link)`
+const SidebarLink = styled(Link)<{ $isActive: boolean }>`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #8c8c8c;
+  color: ${(props) => (props.$isActive ? '#007bff' : '#8c8c8c')};
+  background-color: ${(props) => (props.$isActive ? '#e8f4ff' : 'transparent')};
   border-radius: 5px;
+  padding: 10px;
 
   &:hover {
-    background-color: #f0f0f0;
+    background-color: ${(props) => (props.$isActive ? '#e8f4ff' : '#f0f0f0')};
   }
 `;
 
@@ -67,6 +72,6 @@ const SidebarIcon = styled.div`
 `;
 
 const SidebarTitle = styled.span`
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
 `;

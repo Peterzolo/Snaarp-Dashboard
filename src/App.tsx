@@ -9,19 +9,30 @@ import styled, { ThemeProvider } from 'styled-components';
 import { theme } from './utils/theme';
 import { HomePage } from './Screens/dashboard/Home/HomePage';
 import { DeviceManagement } from './Screens/dashboard/DeviceManagement';
+import { Organization } from './Screens/dashboard/Organization/Organization.';
+import { Settings } from './Screens/dashboard/Setting/Settings';
+import { Reporting } from './Screens/dashboard/Reporting/Reporting';
+import { Billing } from './Screens/dashboard/Billing/Billing';
+import { Account } from './Screens/dashboard/Account/Account';
+import { EndpointMgt } from './Screens/dashboard/EndpointMgt/EndpointMgt';
+import { Devicehealth } from './Screens/dashboard/DeviceHealth/DeviceHealth';
 
 function App() {
-  console.log('Theme:', theme);
-
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <MainWrapper>
           <Routes>
-            {/* Define your routes here */}
+            <Route path="/organization" element={<Organization />} />
+            <Route path="/endpoint-mgt" element={<EndpointMgt />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/billing" element={<Billing />} />
+            <Route path="/reporting" element={<Reporting />} />
+            <Route path="/organization" element={<Organization />} />
+            <Route path="/device-health" element={<Devicehealth />} />
             <Route path="/device-management" element={<DeviceManagement />} />
+            <Route path="/setting" element={<Settings />} />
             <Route path="/" element={<HomePage />} />
-            {/* Add more routes as needed */}
           </Routes>
         </MainWrapper>
       </Router>
