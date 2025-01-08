@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MdSmartphone } from 'react-icons/md';
-import { MdComputer } from 'react-icons/md';
 import { FaWindows } from 'react-icons/fa';
 import { FaApple } from 'react-icons/fa';
 import { FaLinux } from 'react-icons/fa';
-import { useModal } from '../../../../utils/hook';
-import { Modal } from '../../../../Components/modal/Modal';
+import { useModal } from '../../../../../utils/hook';
+import { Modal } from '../../../../../Components/modal/Modal';
 
 export const TopSearchWrapperTwo = () => {
   const { isOpen, openModal, closeModal } = useModal();

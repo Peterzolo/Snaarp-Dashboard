@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchInput from '../../../../Components/SearchInput';
+import SearchInput from '../../../../../Components/SearchInput';
 
 export const LeftSubContentOne = () => {
   return (

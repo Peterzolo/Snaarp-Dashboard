@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from './table/components/Table';
+import { styled } from 'styled-components';
 
 const data = [
   {
@@ -32,7 +33,7 @@ const data = [
 
 export const TableWrapperComponent = () => {
   return (
-    <div>
+    <MainWrapper>
       <Table
         data={data}
         onToggleChange={function (
@@ -43,7 +44,9 @@ export const TableWrapperComponent = () => {
           throw new Error('Function not implemented.');
         }}
       />
-    </div>
+    </MainWrapper>
   );
 };
 //
+
+const MainWrapper = styled.div``;

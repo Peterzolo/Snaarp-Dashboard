@@ -1,10 +1,10 @@
-import { DashboardLayout } from '../../Layouts';
+import { DashboardLayout } from '../../../Layouts';
 import styled from 'styled-components';
+import { SubHeader } from '../../../Layouts/DashboardLayout/DashboardLayoutComponents/SubHeader/SubHeader';
 import { LeftContent } from './LeftContent';
 import { RightContent } from './RightContent';
-import { SubHeader } from '../../Layouts/DashboardLayout/DashboardLayoutComponents/SubHeader/SubHeader';
 
-export const Dashboard = () => {
+export const DeviceManagement = () => {
   return (
     <DashboardLayout>
       <MainWrapper>
@@ -27,6 +27,9 @@ const MainWrapper = styled.div`
   flex-direction: column;
   gap: 18px;
   padding-left: -20px;
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const MainContentWrapper = styled.div`

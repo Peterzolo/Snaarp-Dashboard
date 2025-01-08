@@ -28,7 +28,6 @@ const TopBarWrapper = styled.div`
   width: 100%;
   background: #ffffff;
   padding: 10px 20px;
-  position: sticky;
   top: 0;
   z-index: 10;
   display: flex;

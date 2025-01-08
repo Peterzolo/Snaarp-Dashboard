@@ -4,9 +4,21 @@ import { FaHome, FaUserAlt, FaCog } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const sidebarItems = [
-  { title: 'Home', icon: <FaHome />, link: '/home' },
-  { title: 'Profile', icon: <FaUserAlt />, link: '/profile' },
-  { title: 'Settings', icon: <FaCog />, link: '/settings' },
+  { title: 'Dashboard', icon: <FaHome />, link: '/' },
+  { title: 'Organization & Reg.', icon: <FaUserAlt />, link: '#' },
+  { title: 'Settings', icon: <FaCog />, link: '#' },
+  { title: 'Reporting.', icon: <FaUserAlt />, link: '#' },
+  { title: 'Billing', icon: <FaUserAlt />, link: '#' },
+  { title: 'Account', icon: <FaUserAlt />, link: '#' },
+  { title: 'Device Health', icon: <FaUserAlt />, link: '#' },
+  { title: 'End Point Mgt Security', icon: <FaUserAlt />, link: '#' },
+  {
+    title: 'Device Management',
+    icon: <FaUserAlt />,
+    link: '/device-management',
+  },
+  { title: 'Website Block', icon: <FaUserAlt />, link: '#' },
+  { title: 'Settings', icon: <FaUserAlt />, link: '#' },
 ];
 
 export const SidebarItems = () => {
@@ -42,7 +54,6 @@ const SidebarLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   color: #8c8c8c;
-  padding: 10px;
   border-radius: 5px;
 
   &:hover {

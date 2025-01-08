@@ -11,8 +11,8 @@ import {
   FaRedo,
   FaCircle,
 } from 'react-icons/fa';
-import ToggleSwitch from '../../../../../../Components/Toggle/ToogleSwitch';
-import SelectInput from '../../../../../../Components/SelectInput/CustomSelect';
+import { SelectInput } from '../../../../../../../Components/SelectInput/SelectInput';
+import ToggleSwitch from '../../../../../../../Components/Toggle/ToogleSwitch';
 
 const fields = [
   { key: 'usb', icon: <FaUsb />, label: 'USB' },
@@ -27,7 +27,6 @@ const fields = [
 
 const TableContainer = styled.div`
   overflow-x: auto;
-  margin: 20px 0;
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -48,7 +47,7 @@ const CustomTable = styled.table`
   }
 
   th {
-    background-color: #f4f4f4;
+    background-color: #dbd8d8;
     font-weight: normal;
     font-size: 14px;
   }

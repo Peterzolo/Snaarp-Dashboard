@@ -8,12 +8,18 @@ export const SidebarLayout = ({
   isMobileMenuOpen: boolean;
 }) => {
   return (
-    <SidebarWrapper isMobileMenuOpen={isMobileMenuOpen}>
-      <Logo>Snaarp</Logo>
-      <SidebarItems />
-    </SidebarWrapper>
+    <MainWrapper>
+      <SidebarWrapper isMobileMenuOpen={isMobileMenuOpen}>
+        <Logo>Snaarp</Logo>
+        <SidebarItems />
+      </SidebarWrapper>
+    </MainWrapper>
   );
 };
+
+const MainWrapper = styled.div`
+  overflow: hidden;
+`;
 
 const SidebarWrapper = styled.div<{ isMobileMenuOpen: boolean }>`
   border-radius: 10px;
@@ -30,6 +36,21 @@ const SidebarWrapper = styled.div<{ isMobileMenuOpen: boolean }>`
   top: 0;
   transition: left 0.3s ease;
   z-index: 999;
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: #ccc #f5f5f5; /* For Firefox */
+
+  /* Scrollbar styling for Webkit browsers (e.g., Chrome, Edge, Safari) */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+  }
 
   @media (max-width: 768px) {
     width: 250px;

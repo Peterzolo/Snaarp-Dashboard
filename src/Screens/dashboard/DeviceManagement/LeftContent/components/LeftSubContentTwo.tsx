@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RadioInput from '../../../../Components/RadioButton/RadioButton';
+import RadioInput from '../../../../../Components/RadioButton/RadioButton';
 
 export const LeftSubContentTwo = () => {
   return (

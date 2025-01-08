@@ -22,7 +22,6 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
       <SidebarLayout isMobileMenuOpen={isMobileMenuOpen} />
       <ContentWrapper>
         <TopBarLayout toggleSidebar={toggleSidebar} />
-        {/* <SubHeader /> */}
         <MainContentWrapper>{children}</MainContentWrapper>
       </ContentWrapper>
     </MainWrapper>
@@ -31,8 +30,8 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
 
 const MainWrapper = styled.div`
   display: flex;
-  height: 100vh;
-  /* width: 100%; */
+  height: auto;
+  width: 100%;
   gap: 10px;
 `;
 
@@ -41,10 +40,17 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 1200px;
+  }
 `;
 
 const MainContentWrapper = styled.div`
   flex: 1;
   overflow-y: auto;
   padding: 20px;
+  @media (max-width: 768px) {
+    height: fit-content;
+  }
 `;

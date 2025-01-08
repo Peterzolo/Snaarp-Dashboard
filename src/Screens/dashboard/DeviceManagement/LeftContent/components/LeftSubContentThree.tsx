@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SelectInput } from '../../../../Components/SelectInput/SelectInput';
+import { SelectInput } from '../../../../../Components/SelectInput/SelectInput';
 
 export const LeftSubContentThree = () => {
   return (
