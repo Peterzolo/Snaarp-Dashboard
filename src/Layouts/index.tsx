@@ -42,7 +42,7 @@ const ContentWrapper = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    height: 1200px;
+    height: 1500px;
   }
 `;
 
